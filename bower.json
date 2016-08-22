@@ -15,7 +15,6 @@
     "lodash": "~2.4.1",
     "angular-ui-router": "~0.2.10",
     "moment": "^2.13.0",
-    "adm-dtp": "*",
     "angular-animate": "^1.5.8",
     "angular-pickadate": "*",
     "angular-audio": "^1.7.2",
