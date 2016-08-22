@@ -1,0 +1,13 @@
+  <li>
+    <div class="time">
+      <i class="ion-ios-timer"></i>
+      {{ item.time | date: 'h:mm a' }}
+    </div>
+    <div class="medication">
+      {{ item.name }}<span>{{ item.dosage }}</span>
+    </div>
+    <a data-ng-click="complete({args: item._id})" href="#" class="btnm btnm--green complete-missed">
+      <i class="ion-checkmark-round"></i>
+      Complete
+    </a>
+  </li>

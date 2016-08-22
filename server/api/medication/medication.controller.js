@@ -49,7 +49,7 @@ exports.create = function (req, res) {
 
 exports.update = function (req, res) {
     q.resolve().then(function () {
-        req.body.d.m = moment().toDate();
+        req.body.d = { m: moment().toDate() };
         return q(Medication.findByIdAndUpdate(req.params.id, req.body).exec()).then(function (med) {
             if (!med) {
                 res.send(404);

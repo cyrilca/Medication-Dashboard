@@ -1,3 +1,5 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans";
+@import "https://fonts.googleapis.com/css?family=Roboto+Slab"
 .thing-form {
     margin: 20px 0;
 }
@@ -27,4 +29,315 @@
     padding: 30px 0;
     margin-top: 70px;
     border-top: 1px solid #E5E5E5;
+}
+
+/* App CSS starts */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #f7f7f9;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+strong {
+  color: #333;
+}
+
+.navbar-mavencare {
+  background: #34aad9;
+}
+
+.navbar-mavencare .logo {
+  max-width: 150px;
+  margin-top: 6px;
+}
+
+/* Footer */
+footer {
+  background: #ecf1f5;
+}
+
+.heart-red {
+  color: #FF5008;
+}
+
+/* Buttons */
+.btnm {
+  font-weight: bold;
+  /*border-radius: 5px;*/
+  /*-webkit-border-radius: 5px;*/
+  padding: 5px 10px;
+  border: 1px solid #d8dee9;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.btnm:hover {
+  background: #02aadb;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid transparent;
+}
+
+.btnm--blue {
+  background: #02aadb;
+  color: #fff;
+  border: 0;
+}
+
+.btnm--green {
+  color: #74BF96;
+  border-color: #74BF96;
+}
+
+.btnm--green:hover {
+  background: #74BF96;
+  color: #fff;
+}
+
+.btnm--red {
+  color: #CE3333;
+  border-color: #CE3333;
+}
+
+.btnm--red:hover {
+  background: #CE3333;
+  color: #fff;
+}
+
+/* Pill cards */
+
+.mavencard {
+  padding: 20px;
+  min-height: 150px;
+  background: #ffffff;
+  margin: 10px;
+  max-width: 500px;
+  transition: all 0.3s ease-in-out;
+  -webkit-box-shadow: 0px 0px 32px -8px rgba(0,0,0,0.17);
+  -moz-box-shadow: 0px 0px 32px -8px rgba(0,0,0,0.17);
+  box-shadow: 0px 0px 32px -8px rgba(0,0,0,0.17);
+  padding-left: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mavencard .big-icon {
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.2;
+  font-size: 128px;
+}
+
+.mavencard:hover {
+  transform: scale(1.04);
+}
+
+.mavencard h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+/* Missed pill style */
+
+.mavencard--missed {
+  background: #FFD7D2 !important;
+}
+
+.mavencard #complete {
+  margin: 10px 0 0 0;
+  display: inline-block;
+}
+
+/* Completed style */
+.mavencard--complete {
+  background: #2EE190;
+  color: #fff;
+}
+
+.mavencard--complete h1 {
+  color: #fff;
+}
+
+.mavencard--complete .btnm--green {
+  border-color: white;
+  color: #fff;
+}
+
+/* Side menu */
+
+.blockm {
+  background: #fff;
+  border: 1px solid #d8dee9;
+  margin-top: 9px;
+  /*padding: 10px;*/
+  -webkit-box-shadow: 0px 0px 32px -8px rgba(0,0,0,0.17);
+  -moz-box-shadow: 0px 0px 32px -8px rgba(0,0,0,0.17);
+  box-shadow: 0px 0px 32px -8px rgba(0,0,0,0.17);
+}
+
+.blockm h2 {
+  font-family: 'Roboto Slab', serif;
+  font-size: 21px;
+  margin: 0;
+  color: #F43270;
+  padding: 10px;
+}
+
+/* Missed block css */
+
+#missed {
+  max-height: 400px;
+  overflow: scroll;
+}
+
+#missed ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#missed ul li {
+  border-bottom: 1px solid #eef3f5;
+  padding: 10px;
+  transition: all 0.3s ease;
+}
+
+#missed ul li:last-of-type {
+  border-bottom: 0;
+}
+
+#missed ul li:hover {
+  background: #F9F9F9;
+}
+
+#missed ul li .dose {
+  font-size: 11px;
+}
+
+#missed ul li .medication {
+  font-size: 24px;
+  letter-spacing: 0.3px;
+}
+
+#missed ul li .medication span {
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  background: #74BF96;
+  color: #fff;
+  padding: 3px 4px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  vertical-align: top;
+  display: inline-block;
+  margin: 7px 0 0 7px;
+}
+
+#missed ul li .complete-missed {
+  display: inline-block;
+  margin-top: 5px;
+}
+
+#missed ul li h3 {
+  margin: 0;
+}
+
+/* Media */
+
+@media(max-width: 1200px) {
+  .mavencard {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+}
+
+/* Animations */
+
+.fader {
+  transition: 0.5s linear all;
+  -webkit-transition: 0.5s linear all;
+}
+
+.fader.ng-enter {
+  opacity: 0;
+}
+
+.fader.ng-enter.ng-enter-active {
+  opacity: 1;
+}
+
+.fader.ng-leave {
+  opacity: 1;
+}
+
+.fader.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+/* Current date and time */
+.current--date {
+  padding: 0 10px 10px 10px;
+  font-size: 12px;
+}
+
+.current--time {
+  padding: 0px 10px 0px 10px;
+  font-size: 24px;
+}
+
+/* Restyling calendar */
+.pickadate {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.pickadate-cell li:hover {
+  color: #666666;
+  background: #f7f7f9;
+}
+
+.pickadate-cell .pickadate-active, .pickadate-cell.pickadate-active:hover {
+  background: #F43270 !important;
+  color: #fff !important;
+}
+
+/* Pill animation */
+
+.pill {
+  -webkit-animation-name: spin;
+  -webkit-animation-duration: 4000ms;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  -moz-animation-name: spin;
+  -moz-animation-duration: 4000ms;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+  -ms-animation-name: spin;
+  -ms-animation-duration: 4000ms;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+  animation-name: spin;
+  animation-duration: 4000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@-moz-keyframes spin {
+    from { -moz-transform: rotate(0deg); }
+    to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+.clear {
+  clear: both;
 }

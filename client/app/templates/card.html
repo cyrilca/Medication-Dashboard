@@ -1,0 +1,20 @@
+<div class="mavencard" ng-class="{'mavencard--missed': item.isMissed, 'mavencard--complete': item.completed}">
+    <i class="big-icon" ng-class="{'ion-android-checkbox-outline-blank': !item.completed, 'ion-android-checkbox-outline': item.completed}"></i>
+    <div class="text-left">
+      <div>
+        <i class="ion-clock" aria-hidden="true"></i>
+        {{item.time | date:'medium'}}
+      </div>
+      <div>
+        <h1><i class="ion-leaf" aria-hidden="true"></i>{{item.name}}</h1>
+        <div>
+          <i class="ion-ios-compose-outline" aria-hidden="true"></i>
+          {{item.dosage}}
+        </div>
+      </div>
+      <a ng-if="!item.completed && item.showButton" data-ng-click="complete({args: item._id})" href="#" class="btnm btnm--green fader" id="complete">
+        <i class="ion-checkmark-round"></i>
+        Complete
+      </a>
+    </div>
+</div>

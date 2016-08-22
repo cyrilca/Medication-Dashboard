@@ -1,16 +1,44 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<header class="hero-unit" id="banner">
+<header class="hero-unit" id="banner" style="display: none;">
   <div class="container">
       <h1>{{currentTime}}</h1>
   </div>
 </header>
-<div class="container">
+<div class="container" style="margin-top: 20px;">
   <div class="row">
-    <div class="col-lg-6 col-lg-offset-3 text-center">
-        <div ng-repeat="m in meds">
-            {{m.time}} {{m.name}} {{m.dosage}}
+    <div class="col-lg-3">
+      <div class="blockm" id="calendar">
+        <h2>Calendar</h2>
+        <div style="padding: 10px;">
+          <div pickadate ng-model="date" format="dd/mm/yyyy"></div>
         </div>
+      </div>
+
+      <div class="blockm" id="timer">
+        <h2>Time</h2>
+        <div class="current--time">
+          {{ currentTime }}
+        </div>
+        <div class="current--date">
+          {{ currentDate }}
+        </div>
+      </div>
+
+      <div ng-if="!noMissed()" class="blockm fader" id="missed">
+        <h2>Missed Medication</h2>
+        <ul>
+          <missed-list class="fader" ng-if="el.isMissed" ng-repeat="el in meds" item="el" complete-item="completeById(args)"></missed-list>
+        </ul>
+      </div>
+
+    </div>
+    <div class="col-lg-9 text-center">
+        <div ng-if="meds.length === 0" class="text-left" style="margin-top: 20px;">
+          <i class="ion-happy-outline" style="font-size: 36px; vertical-align: middle;"></i>
+          <span style="padding-left: 5px;">No need to take medications today.</span>
+        </div>
+        <card class="fader" ng-repeat="m in meds | orderBy: 'time' : true" item="m" complete-item="completeById(args)"></card>
     </div>
   </div>
 </div>

@@ -1,0 +1,50 @@
+<div ng-if="!completeClicked">
+<div class="text-center">
+  <h3>Time to take some medication</h3>
+</div>
+
+<div class="text-left">
+
+  <div class="text-center">
+    <img style="margin-top: 10px;" class="pill" src="assets/images/pill.png" alt="Pill">
+  </div>
+
+      <div class="text-center">
+        <h4 style=" margin-left: 5px;">
+          <i style="font-size: 24px; margin-top: 5px;" class="ion-ios-medkit-outline"></i>
+          What to take?
+        </h4>
+      </div>
+
+      <h3 class="text-center" style="font-size: 32px; margin: 0;">{{ name }}</h3>
+
+    <div class="text-center">
+      <span style="background: red; margin-top: 10px; display: inline-block; font-size: 14px; background: #74BF96; color: #fff; padding: 3px 5px;">Dosage: {{ dosage }}</span>
+    </div>
+
+    <div class="text-center" style="margin-top: 20px;">
+      <a data-ng-click="completeMedication(_id)" href="#" class="btnm btnm--green complete-missed">
+        <i class="ion-checkmark-round"></i>
+        Complete
+      </a>
+      <a ng-click="closeWindow()" style="margin-left: 10px;" href="#" class="btnm btnm--red">
+        <i class="ion-android-cancel"></i>
+        Later
+      </a>
+    </div>
+  <!-- </div> -->
+
+  <div class="clear"></div>
+
+</div>
+
+<div style="font-size: 9px; margin-top: 30px; text-align: center;">Icons made by <a href="http://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+
+<div class="clear"></div>
+</div>
+
+<div ng-if="completeClicked" class="fader text-center">
+  <h2>Thank you!</h2>
+  <p>We send all the information to your doctor to keep track of how you doing</p>
+  <i class="ion-android-checkbox-outline" style="font-size: 120px; color: #74BF96;"></i>
+</div>
