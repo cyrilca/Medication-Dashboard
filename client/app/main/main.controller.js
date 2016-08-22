@@ -13,7 +13,7 @@ angular
 
         // Some sounds
         $scope.sounds = {
-            long: ngAudio.load("assets/sound2.wav"),
+            long: ngAudio.load("assets/sound1.mp3"),
             short: ngAudio.load("assets/sound2.wav")
         }
 
@@ -55,23 +55,23 @@ angular
         $scope.getMedications(start, end, function(res) {
             // Uncomment to create a fake item
 
-            // var fakePrior = moment().add(5, 'seconds').format();
-            // var fakeTime = moment().add(15, 'seconds').format()
-            // var fakeAfter = moment().add(20, 'seconds').format()
-            //
-            // var fakeItem = {
-            //     "_id": "57b24e85086d0e6bb1e2d73d",
-            //     completed: false,
-            //     dosage: '110ml',
-            //     isMissed: false,
-            //     name: 'Medication 11',
-            //     priorTime: fakePrior,
-            //     afterTime: fakeAfter,
-            //     time: fakeTime
-            // };
-            //
-            // $scope.meds = null;
-            // $scope.meds = [fakeItem];
+            var fakePrior = moment().add(5, 'seconds').format();
+            var fakeTime = moment().add(15, 'seconds').format()
+            var fakeAfter = moment().add(20, 'seconds').format()
+
+            var fakeItem = {
+                "_id": "57b24e85086d0e6bb1e2d73d",
+                completed: false,
+                dosage: '110ml',
+                isMissed: false,
+                name: 'Medication 11',
+                priorTime: fakePrior,
+                afterTime: fakeAfter,
+                time: fakeTime
+            };
+
+            $scope.meds = null;
+            $scope.meds = [fakeItem];
         });
 
         // Create modal window
@@ -144,7 +144,6 @@ angular
                 // Calls when the time is out
                 if (currentTime.isAfter(afterTime)) {
                     if (!el.isMissed && !el.completed) {
-                        console.log("I know when the hotline blings");
                         $scope.sounds.long.play();
                         ngDialog.close($scope.openModalId.id);
                         el.isMissed = true;
